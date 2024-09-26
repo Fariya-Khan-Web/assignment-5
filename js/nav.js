@@ -1,13 +1,30 @@
 const donation = document.getElementById('donation');
 const history = document.getElementById('history');
 
-function hide(id){
-    document.getElementById('donation-page').classList.add('hidden');
-     document.getElementById('transection').classList.add('hidden')
-    console.log(123)
-    document.getElementById(id).classList.remove('hidden');
+const donationPage = document.getElementById('donation-page');
+const transectionsPage = document.getElementById('transections');
 
+function togglingInUI(id) {
+
+    if (id === 'donation') {
+        donationPage.classList.remove('hidden');
+        transectionsPage.classList.add('hidden');
+        
+        donation.classList.add("bg-lime-400");
+        donation.classList.remove("bg-gray-200");
+        
+        history.classList.add("bg-gray-200"); // inactive 
+    } else {
+        donationPage.classList.add('hidden');
+        transectionsPage.classList.remove('hidden')
+        
+        history.classList.add("bg-lime-400");
+        history.classList.remove("bg-gray-200");
+
+        donation.classList.remove("bg-lime-400"); // inactive 
+
+    }
 }
- 
-// donation.addEventListener('click', hide('donation'));
-// history.addEventListener('click', hide('history'));
+
+history.addEventListener('click', () => togglingInUI('history'));
+donation.addEventListener('click', () => togglingInUI('donation'));

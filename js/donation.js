@@ -10,7 +10,10 @@ const buttonNoa = document.getElementById('btn-noa');
 const donateNoa = document.getElementById('donation-amount-noa');
 const amountNoa = document.getElementById('amount-noa');
 
-buttonNoa.addEventListener('click', function (){
+const dialogContainer = document.getElementById('dialogContainer');
+const dialogCloseBtn = document.getElementById('dialogCloseBtn');
+
+buttonNoa.addEventListener('click', function () {
 
     if (isNaN(donateNoa.value) || donateNoa.value <= 0 || donateNoa.value > balanceNum) {
         alert('Invalid donation amount')
@@ -32,6 +35,9 @@ buttonNoa.addEventListener('click', function (){
         div.setAttribute("class", "new-class");
         div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
         transections.appendChild(div);
+
+        dialogContainer.classList.remove('hidden')
+        dialogContainer.classList.add('flex')
     }
 })
 
@@ -63,6 +69,9 @@ buttonfeni.addEventListener('click', function () {
         div.setAttribute("class", "new-class");
         div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
         transections.appendChild(div);
+
+        dialogContainer.classList.remove('hidden')
+        dialogContainer.classList.add('flex')
     }
 })
 
@@ -72,13 +81,12 @@ const buttonQuota = document.getElementById('btn-quota');
 const donateQuota = document.getElementById('donation-amount-quota');
 const amountQuota = document.getElementById('amount-quota');
 
+
 buttonQuota.addEventListener('click', function () {
 
     if (isNaN(donateQuota.value) || donateQuota.value <= 0 || donateQuota.value > balanceNum) {
-        alert('Invalid donation amount');
-        buttonQuota.onclick = null;
-    }
-    else {
+        alert('🔴 Invalid donation amount');
+    } else {
         let amountQuotaNum = parseFloat(amountQuota.innerText);
         let donateQuotaNum = parseFloat(donateQuota.value);
 
@@ -88,13 +96,22 @@ buttonQuota.addEventListener('click', function () {
         balanceNum = balanceNum - donateQuotaNum;
         document.getElementById('balance').innerText = balanceNum;
 
-        let div = document.createElement('div');
-        div.innerHTML = `<p> ${donateQuotaNum} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh.</p>
+        let historyCard = document.createElement('div');
+        historyCard.innerHTML = `<p> ${donateQuotaNum} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh.</p>
                          <p class="text-gray-500 font-normal text-base pt-3"> Date: ${currentTime} </p>`;
 
-        div.setAttribute("class", "new-class");
-        div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
-        transections.appendChild(div);
+        historyCard.setAttribute("class", "new-class");
+        historyCard.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
+        transections.appendChild(historyCard);
+
+        dialogContainer.classList.remove('hidden')
+        dialogContainer.classList.add('flex')
     }
 
+})
+
+
+dialogCloseBtn.addEventListener('click', function () {
+    dialogContainer.classList.add('hidden')
+    dialogContainer.classList.remove('flex')
 })

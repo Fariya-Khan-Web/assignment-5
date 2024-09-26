@@ -32,8 +32,9 @@
 
 
         <main class="mx-auto text-center pt-6 pb-4">
-            <button onclick="hide('donation')" id="donation" class="btn text-xl bg-lime-400 font-bold">Donation</button>
-            <button onclick="hide('history')" id="history" class="btn text-xl bg-lime-400 font-bold">History</button>
+            
+            <button id="donation" class="btn text-xl bg-lime-400 font-bold">Donation</button>
+            <button id="history" class="btn text-xl border font-bold">History</button>
         </main>
 
     </section>
@@ -106,31 +107,40 @@
                 </p>
                 <input id="donation-amount-quota" class="input input-bordered w-[100%] mb-4" type="text"
                     placeholder="Write Donation Amount">
-                <button id="btn-quota" onclick="my_modal_1.showModal()"
-                    class="btn btn-block bg-lime-400 text-xl font-bold">Donate Now</button>
-                <dialog id="my_modal_1" class="modal">
-                    <div class="modal-box text-center">
-                        <h3 class="text-4xl font-bold">Congrates!</h3>
-                        <div>
-                            <img src="assets/coin.png" class="mx-auto pt-3" alt="">
-                        </div>
-                        <p class="py-4">You have donated for humankind.</p>
-                        <h2 class="text-xl">Successfully</h2>
-                        <div class="modal-action">
-                            <form method="dialog">
-                                <!-- if there is a button in form, it will close the modal -->
-                                <button class="btn mx-auto">close confirmation</button>
-                            </form>
-                        </div>
-                    </div>
-                </dialog>
+
+                <button id="btn-quota" class="btn btn-block bg-lime-400 text-xl font-bold">
+                    Donate Now
+                </button>
             </div>
         </div>
     </section>
 
+    <div class="md:hidden text-center">
+        <p class="text-xl">We've just published a blog. Click here to dive in!</p>
+        <button class="btn bg-lime-400 text-xl font-bold"><a href="blog.html">Blog</a></button>
+    </div>
+
     <section id="transections" class="hidden max-w-screen-lg mx-auto my-20 mt-48">
 
+
     </section>
+
+    <div class="h-screen hidden items-center justify-center bg-gray-300/20 fixed inset-0" id="dialogContainer">
+        <div class="modal-box text-center">
+            <h3 class="text-4xl font-bold">Congrates!</h3>
+            <div>
+                <img src="assets/coin.png" class="mx-auto pt-3" alt="">
+            </div>
+
+            <p class="py-4">You have donated for humankind.</p>
+            <h2 class="text-xl">Successfully</h2>
+
+            <div class="modal-action">
+                <!-- if there is a button in form, it will close the modal -->
+                <button id="dialogCloseBtn" class="btn mx-auto bg-lime-200">close confirmation</button>
+            </div>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script src="./js/donation.js"></script>
