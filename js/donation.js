@@ -33,7 +33,7 @@ buttonNoa.addEventListener('click', function () {
                          <p class="text-gray-500 font-normal text-base pt-3"> Date: ${currentTime} </p>`;
 
         div.setAttribute("class", "new-class");
-        div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
+        div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold", "w-[96%]", "mx-auto")
         transections.appendChild(div);
 
         dialogContainer.classList.remove('hidden')
@@ -67,7 +67,7 @@ buttonfeni.addEventListener('click', function () {
                          <p class="text-gray-500 font-normal text-base pt-3"> Date: ${currentTime} </p>`;
 
         div.setAttribute("class", "new-class");
-        div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
+        div.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold", "w-[96%]", "mx-auto")
         transections.appendChild(div);
 
         dialogContainer.classList.remove('hidden')
@@ -101,7 +101,7 @@ buttonQuota.addEventListener('click', function () {
                          <p class="text-gray-500 font-normal text-base pt-3"> Date: ${currentTime} </p>`;
 
         historyCard.setAttribute("class", "new-class");
-        historyCard.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold")
+        historyCard.classList.add("p-5", "border", "border-2", "my-2", "rounded-xl", "text-xl", "font-bold", "w-[96%]", "mx-auto")
         transections.appendChild(historyCard);
 
         dialogContainer.classList.remove('hidden')
