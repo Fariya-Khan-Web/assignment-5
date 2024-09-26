@@ -14,6 +14,9 @@ function togglingInUI(id) {
         donation.classList.remove("bg-gray-200");
         
         history.classList.add("bg-gray-200"); // inactive 
+
+        document.getElementById('blog-bottom').classList.remove("hidden");
+
     } else {
         donationPage.classList.add('hidden');
         transectionsPage.classList.remove('hidden')
@@ -22,6 +25,8 @@ function togglingInUI(id) {
         history.classList.remove("bg-gray-200");
 
         donation.classList.remove("bg-lime-400"); // inactive 
+        
+        document.getElementById('blog-bottom').classList.add("hidden");
 
     }
 }
