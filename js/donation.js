@@ -16,7 +16,7 @@ const dialogCloseBtn = document.getElementById('dialogCloseBtn');
 buttonNoa.addEventListener('click', function () {
 
     if (isNaN(donateNoa.value) || donateNoa.value <= 0 || donateNoa.value > balanceNum) {
-        alert('Invalid donation amount')
+        alert('🔴 Invalid donation amount')
     }
     else {
         let amountNoaNum = parseFloat(amountNoa.innerText);
@@ -50,7 +50,7 @@ const amountfeni = document.getElementById('amount-feni');
 buttonfeni.addEventListener('click', function () {
 
     if (isNaN(donatefeni.value) || donatefeni.value <= 0 || donatefeni.value > balanceNum) {
-        alert('Invalid donation amount')
+        alert('🔴 Invalid donation amount')
     }
     else {
         let amountfeniNum = parseFloat(amountfeni.innerText);
